@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hero {
+    height: 100vh; /* This makes it full viewport height */
+    background-image: url('images/wallpy.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: flex-start; /* Changed to allow manual margin control */
+    align-items: flex-start; /* Aligns to top */
+    /* Add a subtle gradient overlay at the bottom for smoother transition */
+    position: relative;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 150px; /* Adjust this value to control the fade height */
+    background: linear-gradient(to bottom, transparent, #45447d);
+}
+
+.hero h1 {
+    color: white; /* Makes the text white - adjust color as needed */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-top: 50px; /* Adds a small gap from the very top */
+    margin-left: 1200px; /* Moves the text right - adjust this value to move more/less */
+}
+
+.content {
+    padding: 20px;
+    background-color: #45447d;
+    /* Remove all animation related properties */
+}
+
+header {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end; /* This will push the nav to the right */
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+.content-background {
+    height: 100vh;
+    background-image: url('images/wallpy.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+}
+
+.content-image {
+    max-width: 500px;
+    height: 100vh;
+    display: block;
+    margin: 0;
+    margin-left: 50px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
+    object-fit: contain;
+    /* Adjusted glow effect for all sides with reduced intensity */
+    filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.15));
+    -webkit-mask-image: radial-gradient(
+        circle at center,
+        rgba(0,0,0,1) 70%,
+        rgba(0,0,0,0) 100%
+    );
+    mask-image: radial-gradient(
+        circle at center,
+        rgba(0,0,0,1) 70%,
+        rgba(0,0,0,0) 100%
+    );
+}
